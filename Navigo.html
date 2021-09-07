@@ -1,0 +1,23 @@
+<script src="http://unpkg.com/navigo@6"></script>
+<script>var routes = new Navigo(null);
+
+    // Main
+    routes.on(() => {
+        console.log('Default route');
+    });
+
+    // Other routes
+    routes.on({
+        'Navigo.html/route1': () => {
+            console.log('route1');
+        },
+        '/route2': () => {
+            console.log('route2');
+        }
+    }).resolve();
+
+    // 404
+    routes.notFound(() => {
+        console.log(404);
+    }).resolve();</script>
+    <a href="Mu.html/route1">/route1</a>
