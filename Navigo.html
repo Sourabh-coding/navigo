@@ -14,7 +14,9 @@
       const Route = ReactRouterDOM.Route;
       
       var a = () => {
-        
+        var ih = document.querySelector(".par").innerHTML;
+        document.querySelector(".par").innerHTML = ih +=  ' <Route path="/tippi" exact render={() => <h1>tippi</h1>';
+      }
         return "Hello";
       }
       const App = () => (
@@ -49,8 +51,8 @@
     </script>
     <script>
       window.onload = function(){
-      var ih = document.querySelector(".par").innerHTML;
-        document.querySelector(".par").innerHTML = html +=  ' <Route path="/tippi" exact render={() => <h1>tippi</h1>';
+    /*  var ih = document.querySelector(".par").innerHTML;
+        document.querySelector(".par").innerHTML = html +=  ' <Route path="/tippi" exact render={() => <h1>tippi</h1>';*/
       }
     </script>
   </body>
