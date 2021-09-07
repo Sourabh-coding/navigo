@@ -1,24 +1,57 @@
-<script src="http://unpkg.com/navigo@6"></script>
-<script>var routes = new Navigo(null);
-
-    // Main
-    routes.on(() => {
-        console.log('Default route');
-    });
-
-    // Other routes
-    routes.on({
-        'navigo/Navigo.html/route1': () => {
-            console.log('route1');
-        },
-        '/route2': () => {
-            console.log('route2');
-        }
-    }).resolve();
-
-    // 404
-    routes.notFound(() => {
-        console.log(404);
-    }).resolve();</script>
-    <a href="Mu.html/route1">/route1</a>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <script src='https://unpkg.com/react@16.3.1/umd/react.production.min.js'></script>
+    <script src='https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js'></script>
+    <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+  </head>
+  <body>
+    <div id='root'></div>
+    <script type='text/babel'>
+      const Link = ReactRouterDOM.Link;
+      const Route = ReactRouterDOM.Route;
+      
+      var a = () => {
+        
+        return "Hello";
+      }
+      const App = () => (
+        <ReactRouterDOM.HashRouter>
+        <button onClick={a}>Button</button>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/register">Register Link tag</Link></li>
+            <li><Link to="/sourabh">Sourabh</Link></li>
+            <li><Link to="/tippi">tippi</Link></li>
+          </ul>
+        <div className="par">
+          <Route path="/" exact component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/sourabh" component={Sourabh} />
+          
+          </div>
+          <p className="pa">
+          
+          </p>
+        </ReactRouterDOM.HashRouter>
+      )
+     
+      const Home = () => <h1>Home</h1>
+      const Login = () => <h1>Login</h1>
+      const Register = () => <h1>Register</h1>
+      var Sourabh = () => <h1>Sourabh</h1>
+   
+      ReactDOM.render(<App />, document.querySelector('#root'));
+    </script>
+    <script>
+      window.onload = function(){
+      var ih = document.querySelector(".par").innerHTML;
+        document.querySelector(".par").innerHTML = html +=  ' <Route path="/tippi" exact render={() => <h1>tippi</h1>';
+      }
+    </script>
+  </body>
+</html>
