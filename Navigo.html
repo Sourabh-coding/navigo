@@ -18,7 +18,7 @@
         return "Hello";
       }
       const App = () => (
-        <ReactRouterDOM.HashRouter>
+        <ReactRouterDOM.BrowserRouter>
         <button onClick={a}>Button</button>
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -37,7 +37,7 @@
           <p className="pa">
           
           </p>
-        </ReactRouterDOM.HashRouter>
+        </ReactRouterDOM.BrowserRouter>
       )
      
       const Home = () => <h1>Home</h1>
